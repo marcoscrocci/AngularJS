@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar</title>
+</head>
+
+<body>
+    <h1>Validar</h1>
+    <form name="formValidar">
+        <div class="form-group" ng-class="{'has-error': formValidar.myDecimal.$invalid}">
+            <label for="inputText3" class="col-sm-2 control-label">Decimal</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" name="myDecimal" placeholder="Decimal" ng-model="myDecimal"
+                    ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required />
+
+                <span class="help-block" ng-show="!formValidar.myDecimal.$valid">
+                    Número inválido!
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="inputText3" class="col-sm-2 control-label">The value:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="myDecimal" disabled />
+
+
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
